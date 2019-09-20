@@ -14,7 +14,7 @@ export default class Meme {
             console.log(image)
             
             const response = {
-                src: image[0].attribs.src,
+                src: image[0].attribs['data-src'],
                 title: image[0].attribs.title 
             }
             
@@ -31,7 +31,7 @@ export default class Meme {
             const image = $("article.entry > header > a.photo > img", meme_request.data)
             
             const response = {
-                src: image[0].attribs.src,
+                src: image[0].attribs['data-src'],
                 title: image[0].attribs.title 
             }
             
@@ -49,7 +49,7 @@ export default class Meme {
             const meme_request = await this.connection.get("" + link[0].attribs.href)
             const about = $("h2#about + p", meme_request.data).text()
             const origin = $("h2#origin + p", meme_request.data).text()
-            const image = $("article.entry > header > a.photo > img",  meme_request.data)[0].attribs.src
+            const image = $("article.entry > header > a.photo > img",  meme_request.data)[0].attribs['data-src']
             const title = $("section.info > h1 > a", meme_request.data).text()
     
             return {
@@ -68,7 +68,7 @@ export default class Meme {
             const meme_request = await this.connection.get(this.base_url + "random")
             const about = $("h2#about + p", meme_request.data).text()
             const origin = $("h2#origin + p", meme_request.data).text()
-            const image = $("article.entry > header > a.photo > img",  meme_request.data)[0].attribs.src
+            const image = $("article.entry > header > a.photo > img",  meme_request.data)[0].attribs['data-src']
             const title = $("section.info > h1 > a", meme_request.data).text()
     
             return {
