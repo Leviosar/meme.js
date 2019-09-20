@@ -1,0 +1,37 @@
+{
+  "name": "meme.js",
+  "version": "1.0.0",
+  "description": "API for searching really nice memes on the web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./package-lock.json,./README.md,./LICENSE --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leviosar/meme.js.git"
+  },
+  "keywords": [
+    "meme",
+    "knowyourmeme"
+  ],
+  "author": "leviosar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leviosar/meme.js/issues"
+  },
+  "homepage": "https://github.com/Leviosar/meme.js#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "nodeyourmeme": "^2.0.0",
+    "puppeteer": "^1.20.0",
+    "slugify": "^1.3.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^3.0.0"
+  }
+}
