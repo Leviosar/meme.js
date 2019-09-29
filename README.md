@@ -2,6 +2,8 @@
 
 Deployable API for searching really nice memes on the web.
 
+![English motherfucker](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2019/Aug/5/14/restful-api-motherfucker-216.png)
+
 ## What in the name of all gods is this?
 
 Need a funny API to make coding examples? Want to create a telegram bot that sends memes (already did it)? A meme API will serve your needs. But hey, as the holy bible of internet memes [knowyourmeme](https://knowyourmeme.com) doesn't provide a public API to their data, what should we do? If you said write a web scraper to fetch those data you're absolutelly right and that's Meme.js!
@@ -16,7 +18,9 @@ Like i've said, my purpose with Meme.js was to serve a fun and simple meme API a
 
 ## Routes
 
-### http://thememeapi.online/image/random
+The live base url is https://thememeapi.online
+
+### /image/random
 
 - Description: returns a random meme JSON
 - Method: GET
@@ -29,7 +33,7 @@ Like i've said, my purpose with Meme.js was to serve a fun and simple meme API a
     }
 ```
 
-### http://thememeapi.online/image/:search
+### /image/:search
 
 >NOTE: for searches containing more than one word, use '+' to separate them in the url
 
@@ -44,7 +48,7 @@ Like i've said, my purpose with Meme.js was to serve a fun and simple meme API a
     }
 ```
 
-### http://thememeapi.online/meme/random
+### /meme/random
 
 - Description: returns the definitions of a random meme
 - Method: GET
@@ -59,7 +63,7 @@ Like i've said, my purpose with Meme.js was to serve a fun and simple meme API a
     }
 ```
 
-### http://thememeapi.online/meme/:search
+### /meme/:search
 
 >NOTE: for searches containing more than one word, use '+' to separate them in the url
 
@@ -75,6 +79,18 @@ Like i've said, my purpose with Meme.js was to serve a fun and simple meme API a
         "image":"Meme image"
     }
 ```
+
+### /raw/meme/random
+
+>NOTE: this is redirect, i've warned you.
+
+Description: redirects you to a random meme page on knowyourmeme
+
+### /raw/image/random
+
+>NOTE: this is redirect, i've warned you.
+
+Description: redirects you to a random image file on knowyourmeme
 
 ## Build
 

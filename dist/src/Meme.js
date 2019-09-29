@@ -35,7 +35,7 @@ var Meme = function () {
                 console.log(image);
 
                 var response = {
-                    src: image[0].attribs.src,
+                    src: image[0].attribs['data-src'],
                     title: image[0].attribs.title
                 };
 
@@ -51,11 +51,8 @@ var Meme = function () {
                 var meme_request = await this.connection.get(this.base_url + "random");
                 var image = (0, _cheerio2.default)("article.entry > header > a.photo > img", meme_request.data);
 
-                // console.log(image[0])
-                console.log(image[0].attribs['data-src']);
-
                 var response = {
-                    src: image[0].attribs.src,
+                    src: image[0].attribs['data-src'],
                     title: image[0].attribs.title
                 };
 
@@ -73,7 +70,7 @@ var Meme = function () {
                 var meme_request = await this.connection.get("" + link[0].attribs.href);
                 var about = (0, _cheerio2.default)("h2#about + p", meme_request.data).text();
                 var origin = (0, _cheerio2.default)("h2#origin + p", meme_request.data).text();
-                var image = (0, _cheerio2.default)("article.entry > header > a.photo > img", meme_request.data)[0].attribs.src;
+                var image = (0, _cheerio2.default)("article.entry > header > a.photo > img", meme_request.data)[0].attribs['data-src'];
                 var title = (0, _cheerio2.default)("section.info > h1 > a", meme_request.data).text();
 
                 return {
@@ -93,7 +90,7 @@ var Meme = function () {
                 var meme_request = await this.connection.get(this.base_url + "random");
                 var about = (0, _cheerio2.default)("h2#about + p", meme_request.data).text();
                 var origin = (0, _cheerio2.default)("h2#origin + p", meme_request.data).text();
-                var image = (0, _cheerio2.default)("article.entry > header > a.photo > img", meme_request.data)[0].attribs.src;
+                var image = (0, _cheerio2.default)("article.entry > header > a.photo > img", meme_request.data)[0].attribs['data-src'];
                 var title = (0, _cheerio2.default)("section.info > h1 > a", meme_request.data).text();
 
                 return {

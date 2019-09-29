@@ -19,6 +19,23 @@ app.get("/", function (req, res) {
     res.send("There's nothing to see here");
 });
 
+app.get("/raw/image/random", async function (req, res) {
+    try {
+        var meme = await api.randomImage();
+        res.redirect(meme.src);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+app.get("/raw/meme/random", async function (req, res) {
+    try {
+        res.redirect('http://knowyourmeme.com/random');
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 app.get("/image/random", async function (req, res) {
     try {
         var meme = await api.randomImage();
